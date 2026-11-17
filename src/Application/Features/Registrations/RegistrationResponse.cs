@@ -19,7 +19,7 @@ public sealed record RegistrationResponse(
     decimal AmountPaid,
     PaymentStatus PaymentStatus)
 {
-    public static RegistrationResponse From(Registration registration) => new(
+    public static RegistrationResponse Gikan(Registration registration) => new(
         registration.Id,
         registration.RegistrationNumber,
         registration.RegistrationDate,

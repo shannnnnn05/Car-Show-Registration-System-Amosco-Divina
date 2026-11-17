@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 public sealed class GetRegistrationByIdQueryHandler(IAppDbContext dbContext)
     : IQueryHandler<GetRegistrationByIdQuery, Result<RegistrationResponse>>
 {
-    public async Task<Result<RegistrationResponse>> HandleAsync(
+    public async Task<Result<RegistrationResponse>> Kuaon(
         GetRegistrationByIdQuery query,
         CancellationToken cancellationToken = default)
     {
@@ -24,6 +24,6 @@ public sealed class GetRegistrationByIdQueryHandler(IAppDbContext dbContext)
                 $"Registration with id '{query.Id}' was not found."));
         }
 
-        return Result<RegistrationResponse>.Success(RegistrationResponse.From(registration));
+        return Result<RegistrationResponse>.Success(RegistrationResponse.Gikan(registration));
     }
 }

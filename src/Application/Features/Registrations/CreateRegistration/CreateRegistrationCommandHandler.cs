@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 public sealed class CreateRegistrationCommandHandler(IAppDbContext dbContext)
     : ICommandHandler<CreateRegistrationCommand, Result<RegistrationResponse>>
 {
-    public async Task<Result<RegistrationResponse>> HandleAsync(
+    public async Task<Result<RegistrationResponse>> Gibohon(
         CreateRegistrationCommand command,
         CancellationToken cancellationToken = default)
     {
@@ -65,6 +65,6 @@ public sealed class CreateRegistrationCommandHandler(IAppDbContext dbContext)
         dbContext.Registrations.Add(registration);
         await dbContext.SaveChangesAsync(cancellationToken);
 
-        return Result<RegistrationResponse>.Success(RegistrationResponse.From(registration));
+        return Result<RegistrationResponse>.Success(RegistrationResponse.Gikan(registration));
     }
 }

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 public sealed class GetRegistrationSummaryQueryHandler(IAppDbContext dbContext)
     : IQueryHandler<GetRegistrationSummaryQuery, Result<GetRegistrationSummaryResponse>>
 {
-    public async Task<Result<GetRegistrationSummaryResponse>> HandleAsync(
+    public async Task<Result<GetRegistrationSummaryResponse>> Kuaon(
         GetRegistrationSummaryQuery query,
         CancellationToken cancellationToken = default)
     {

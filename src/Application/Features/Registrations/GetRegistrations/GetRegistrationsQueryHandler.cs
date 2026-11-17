@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 public sealed class GetRegistrationsQueryHandler(IAppDbContext dbContext)
     : IQueryHandler<GetRegistrationsQuery, Result<GetRegistrationsResponse>>
 {
-    public async Task<Result<GetRegistrationsResponse>> HandleAsync(
+    public async Task<Result<GetRegistrationsResponse>> Kuaon(
         GetRegistrationsQuery query,
         CancellationToken cancellationToken = default)
     {
