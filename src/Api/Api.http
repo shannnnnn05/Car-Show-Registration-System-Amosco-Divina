@@ -1,0 +1,239 @@
+@host = http://localhost:5205
+
+GET {{host}}/
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?page=2&pageSize=5
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?page=999
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?page=0
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?pageSize=100
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?type=VIP
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?status=Confirmed
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?participantName=juan
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?participantName=JUAN
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?participantName=dela
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?type=Competitor&status=Pending&participantName=juan
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?participantName=zzzzzz
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?type=Sponsor
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations?status=Done
+Accept: application/json
+
+###
+
+GET {{host}}/api/registrations/summary
+Accept: application/json
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Juan Dela Cruz",
+  "contactNumber": "09171234567",
+  "email": "juan.delacruz@example.com",
+  "address": "123 Rizal St., Naga City",
+  "carMakeModel": "Toyota Supra MK4",
+  "plateNumber": "TST 1001",
+  "registrationType": "Competitor",
+  "amountPaid": 1000.00
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Ana Lopez",
+  "contactNumber": "09181234567",
+  "email": "ana.lopez@example.com",
+  "address": "45 Mabini St., Sorsogon City",
+  "carMakeModel": "Honda Civic",
+  "plateNumber": "TST 1002",
+  "registrationType": "Exhibitor",
+  "amountPaid": 0
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Rico Bautista",
+  "contactNumber": "09191234567",
+  "email": "rico.bautista@example.com",
+  "address": "78 Bonifacio Ave., Legazpi City",
+  "carMakeModel": "Nissan GT-R",
+  "plateNumber": "TST 1003",
+  "registrationType": "VIP",
+  "amountPaid": 5000
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Juan Dela Cruz",
+  "contactNumber": "09171234567",
+  "email": "juan.delacruz@example.com",
+  "address": "123 Rizal St., Naga City",
+  "carMakeModel": "Toyota Supra MK4",
+  "plateNumber": "TST 1001",
+  "registrationType": "Competitor",
+  "amountPaid": 1000.00
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "",
+  "contactNumber": "",
+  "email": "",
+  "address": "",
+  "carMakeModel": "",
+  "plateNumber": "",
+  "registrationType": "Competitor",
+  "amountPaid": 0
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Invalid Contact",
+  "contactNumber": "12345",
+  "email": "invalid@example.com",
+  "address": "Sorsogon City",
+  "carMakeModel": "Toyota Corolla",
+  "plateNumber": "TST 1007",
+  "registrationType": "Competitor",
+  "amountPaid": 0
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Invalid Email",
+  "contactNumber": "09171234567",
+  "email": "juan-at-example",
+  "address": "Sorsogon City",
+  "carMakeModel": "Toyota Corolla",
+  "plateNumber": "TST 1008",
+  "registrationType": "Competitor",
+  "amountPaid": 0
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Overpaid Exhibitor",
+  "contactNumber": "09171234567",
+  "email": "overpaid@example.com",
+  "address": "Sorsogon City",
+  "carMakeModel": "Toyota Corolla",
+  "plateNumber": "TST 1009",
+  "registrationType": "Exhibitor",
+  "amountPaid": 2000
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Negative Payment",
+  "contactNumber": "09171234567",
+  "email": "negative@example.com",
+  "address": "Sorsogon City",
+  "carMakeModel": "Toyota Corolla",
+  "plateNumber": "TST 1010",
+  "registrationType": "Competitor",
+  "amountPaid": -100
+}
+
+###
+
+POST {{host}}/api/registrations
+Content-Type: application/json
+
+{
+  "participantName": "Unknown Type",
+  "contactNumber": "09171234567",
+  "email": "unknown@example.com",
+  "address": "Sorsogon City",
+  "carMakeModel": "Toyota Corolla",
+  "plateNumber": "TST 1011",
+  "registrationType": "Sponsor",
+  "amountPaid": 0
+}
