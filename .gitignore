@@ -1,6 +1,14 @@
-bin
-obj
+# Backend (.NET)
+bin/
+obj/
 *.db
 *.db-shm
 *.db-wal
-.vs
+.vs/
+
+# Frontend (Node.js / Vite)
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
